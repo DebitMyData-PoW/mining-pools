@@ -14,7 +14,7 @@
     "addresses": [
       "DGabFztP4EYnynR7Xe1g2RDDjzDDM6822a"
     ],
-    "tags": ["yiimp"],
+    "tags": [],
     "link": "https://pool.coin-miners.info/"
   },
   {
@@ -23,7 +23,7 @@
     "addresses": [
       "DHWaU1S9mCs142hsVvcJeTYG6VTycYLrvn"
     ],
-    "tags": ["Miningcore"],
+    "tags": [],
     "link": "https://minorpool.com/#Debitmydata"
   },
 ]
