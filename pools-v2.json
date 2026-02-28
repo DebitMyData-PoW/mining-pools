@@ -5,7 +5,7 @@
     "addresses": [
       "DHa5vRtz46ENeVdLFjjDSwvWirEejuZrkZ"
     ],
-    "tags": ["/Official/"],
+    "tags": ["Official"],
     "link": "https://pool.debitmydata.io/"
   },
   {
@@ -14,34 +14,16 @@
     "addresses": [
       "DGabFztP4EYnynR7Xe1g2RDDjzDDM6822a"
     ],
-    "tags": [""],
+    "tags": ["yiimp"],
     "link": "https://pool.coin-miners.info/"
   },
   {
     "id": 3,
-    "name": "Coin-Miners SOLO",
-    "addresses": [
-      "DGabFztP4EYnynR7Xe1g2RDDjzDDM6822a"
-    ],
-    "tags": [""],
-    "link": "https://pool.coin-miners.info/"
-  },
-  {
-    "id": 4,
     "name": "MinorPool",
     "addresses": [
       "DHWaU1S9mCs142hsVvcJeTYG6VTycYLrvn"
     ],
-    "tags": [],
+    "tags": ["Miningcore"],
     "link": "https://minorpool.com/#Debitmydata"
   },
-  {
-    "id": 5,
-    "name": "MinorPool SOLO",
-    "addresses": [
-      "DHWaU1S9mCs142hsVvcJeTYG6VTycYLrvn"
-    ],
-    "tags": [],
-    "link": "https://minorpool.com/#Debitmydata-S"
-  }
 ]
