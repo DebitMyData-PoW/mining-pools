@@ -25,5 +25,14 @@
     ],
     "tags": [],
     "link": "https://minorpool.com/#Debitmydata"
+  },
+  {
+    "id": 4,
+    "name": "AltPool",
+    "addresses": [
+      "DJioEAu5bfeVXm43K6ErfFE3ms2kjd5sVT"
+    ],
+    "tags": ["AltPool"],
+    "link": "https://altcoinspool.cc"
   }
 ]
