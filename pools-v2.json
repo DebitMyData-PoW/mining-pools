@@ -34,5 +34,14 @@
     ],
     "tags": ["AltPool"],
     "link": "https://altcoinspool.cc"
+  },
+  {
+    "id": 5,
+    "name": "KriptoKyng",
+    "addresses": [
+      "D6okdBoai4iaBYbRfr61pxJ3vGEeXrrfHd"
+    ],
+    "tags": ["KriptoKyng Pool"],
+    "link": "https://kriptokyng.com/pools/dmd"
   }
 ]
