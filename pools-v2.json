@@ -43,5 +43,14 @@
     ],
     "tags": ["KriptoKyng Pool"],
     "link": "https://kriptokyng.com/pools/dmd"
+  },
+  {
+    "id": 6,
+    "name": "CyberPool",
+    "addresses": [
+      "dm1q2qq63g00kertw7qq7a5jzhp6ve7npuljyr82t7"
+    ],
+    "tags": ["CyberPool"],
+    "link": "https://cyberpool.pro"
   }
 ]
