@@ -52,5 +52,14 @@
     ],
     "tags": ["CyberPool"],
     "link": "https://cyberpool.pro"
+  },
+  {
+    "id": 7,
+    "name": "Pep Pool",
+    "addresses": [
+      "DFKd1D68pAEeHv1F5xMoernj87QoYQqVZu"
+    ],
+    "tags": ["Mined by pep"],
+    "link": ""
   }
 ]
