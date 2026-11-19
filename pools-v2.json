@@ -71,7 +71,7 @@
   },
   {
     "id": 8,
-    "name": "trrxitte",
+    "name": "Trrxitte",
     "addresses": [
       "DHap4pEV5gdky8hZ8c5Yw5zgD2u7Q5Znp3"
     ],
@@ -81,11 +81,11 @@
   },
   {
     "id": 9,
-    "name": "shears",
+    "name": "Shears",
     "addresses": [
       "dm1q202l4t70q2q2h56skfy8luzqy6xrx4f8mnjted"
     ],
-    "tags": ["Shears"],
+    "tags": ["Shears Mining"],
     "link": "https://sha256-mining.shears.co.uk",
     "country": "United Kingdom"
   }
