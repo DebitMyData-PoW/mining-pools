@@ -88,5 +88,15 @@
     "tags": ["Shears Mining"],
     "link": "https://sha256-mining.shears.co.uk",
     "country": "United Kingdom"
+  },
+  {
+    "id": 10,
+    "name": "GoSlimStratum",
+    "addresses": [
+      ""
+    ],
+    "tags": ["GoSlimStratum"],
+    "link": "https://www.mmfpsolutions.io",
+    "country": "US"
   }
 ]
