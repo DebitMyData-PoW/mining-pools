@@ -78,5 +78,15 @@
     "tags": ["sha256 TRRXITTE"],
     "link": "https://sha256.ae/#DMD_solo",
     "country": "United Arab Emirates"
+  },
+  {
+    "id": 9,
+    "name": "shears",
+    "addresses": [
+      "dm1q202l4t70q2q2h56skfy8luzqy6xrx4f8mnjted"
+    ],
+    "tags": ["Shears"],
+    "link": "https://sha256-mining.shears.co.uk",
+    "country": "United Kingdom"
   }
 ]
