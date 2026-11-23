@@ -1,3 +1,48 @@
+# DebitMyData's mining pools
+
+The pools that mine DMD (the DebitMyData coin), for DebitMyData's sites:
+
+- **`pools-v2.json`**: who found each block. The mempool explorer
+  ([mempool.debitmydata.io](https://mempool.debitmydata.io)), DMD Stats
+  ([stats.debitmydata.io](https://stats.debitmydata.io)), the analytics site
+  ([analytics.debitmydata.io](https://analytics.debitmydata.io)) and DMD Mining
+  ([mining.debitmydata.io](https://mining.debitmydata.io)) read it. Its format is mempool's
+  (below), with each pool's `country`.
+- **`pools-info.json`**: what DMD Mining shows about each pool besides: its API, how to connect,
+  its fees. Only DMD Mining reads it, so a mistake there never changes who found a block.
+
+The pools' logos are in [mining-pool-logos](https://github.com/DebitMyData-PoW/mining-pool-logos),
+named as the pool's slug: its name's lowercase letters and digits (`Coin-Miners`: `coinminers.svg`).
+
+## DMD Mining: `pools-info.json`
+
+One entry per pool, by its `id` in `pools-v2.json`. Every field but `id` is optional: a pool
+without an entry still shows, with its blocks from the chain.
+
+| Field | |
+| :-- | :-- |
+| `id` | The pool's `id` in `pools-v2.json` |
+| `title` | The name to show, when it isn't the one in `pools-v2.json` (`Official`: `DebitMyData pool`) |
+| `website` | The page to send miners to (else the `link` in `pools-v2.json`) |
+| `software` | `MiningCore`, `YIIMP`, `NOMP` or `Custom` |
+| `api` | The pool's API: for MiningCore, its address up to `/api` (`https://cyberpool.pro/api`), for YIIMP its `/api` |
+| `api_coin` | YIIMP: the coin's symbol in its API (`DMD`) |
+| `hosts` | The stratum servers' addresses, without ports: the ports come from the API (MiningCore) |
+| `username`, `account` | What miners put as the username; `true` when the pool needs an account first |
+| `modes` | One per way to mine there (shared, solo), below |
+| `notes` | A sentence for its page |
+
+Each mode: `label` (`PPLNS`, `Solo`…), `api_id` (MiningCore: the pool's id in its API, such as
+`dmd1`), `scheme` (`PPLNS`, `PPS`, `PROP`, `SOLO`…), `fee` (percent), `min_payout` (DMD),
+`stratum` (`host:port` addresses, when the API doesn't give the ports), `password` and `note`.
+A MiningCore pool's API gives the scheme, fee, minimum payout and ports itself: what you write
+here only fills in what it doesn't.
+
+DMD Mining reads both files and the logos from GitHub every hour: a pool added here shows there
+within the hour.
+
+---
+
 # Bitcoin Mining Pools
 
 Mining pools definition used on https://mempool.space/mining/pools

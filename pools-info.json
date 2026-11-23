@@ -1,0 +1,120 @@
+{
+  "about": "What DMD Mining (mining.debitmydata.io) shows about each pool beyond pools-v2.json: its API, how to connect, its fees. Each entry's id is the pool's id in pools-v2.json. See the README, 'DMD Mining: pools-info.json'.",
+  "pools": [
+    {
+      "id": 1,
+      "title": "DebitMyData pool",
+      "website": "https://pool.debitmydata.io/",
+      "software": "YIIMP",
+      "api": "https://pool.debitmydata.io/api",
+      "api_coin": "DMD",
+      "username": "Your DMD address, optionally followed by a dot and a worker name (address.S19)",
+      "modes": [
+        {
+          "label": "Shared",
+          "scheme": "PPLNS",
+          "fee": 0.5,
+          "stratum": [
+            "connect.debitmydata.io:8700"
+          ],
+          "password": "x",
+          "note": "Paid in each block the pool finds. A starting difficulty: d=65536."
+        },
+        {
+          "label": "Solo",
+          "scheme": "SOLO",
+          "fee": 1,
+          "stratum": [
+            "connect.debitmydata.io:8700"
+          ],
+          "password": "m=solo",
+          "note": "Your whole block, when you find one. With a starting difficulty: d=65536,m=solo."
+        }
+      ],
+      "notes": "DebitMyData's own pool. NiceHash compatible."
+    },
+    {
+      "id": 3,
+      "website": "https://minorpool.com/#Debitmydata",
+      "software": "MiningCore",
+      "api": "https://minorpool.com/api",
+      "hosts": [
+        "minorpool.com"
+      ],
+      "username": "Your DMD address, optionally followed by a dot and a worker name",
+      "modes": [
+        {
+          "label": "PPLNS",
+          "api_id": "Debitmydata",
+          "password": "x"
+        },
+        {
+          "label": "Solo",
+          "api_id": "Debitmydata-S",
+          "password": "x"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "website": "https://cyberpool.pro/connect.html?coin=dmd1",
+      "software": "MiningCore",
+      "api": "https://cyberpool.pro/api",
+      "hosts": [
+        "cyberpool.pro"
+      ],
+      "username": "Your DMD address, optionally followed by a dot and a worker name",
+      "modes": [
+        {
+          "label": "Solo",
+          "api_id": "dmd1",
+          "password": "x"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "website": "https://sha256.ae/#DMD_solo/connect",
+      "software": "MiningCore",
+      "api": "https://sha256.trrxitte.com/api",
+      "hosts": [
+        "sha256.ae",
+        "sha256.trrxitte.com",
+        "sha256.multipool.dev"
+      ],
+      "username": "Your DMD address, optionally followed by a dot and a worker name",
+      "modes": [
+        {
+          "label": "PPLNS",
+          "api_id": "DMD_pplns",
+          "password": "x"
+        },
+        {
+          "label": "Solo",
+          "api_id": "DMD_solo",
+          "password": "x"
+        }
+      ],
+      "notes": "Run by TRRXITTE."
+    },
+    {
+      "id": 9,
+      "website": "https://sha256-mining.shears.co.uk",
+      "software": "Custom",
+      "account": true,
+      "username": "Your Shears account (add a DMD payout address to it first)",
+      "modes": [
+        {
+          "label": "Solo",
+          "scheme": "SOLO",
+          "fee": 0,
+          "stratum": [
+            "stratum.shears.co.uk:3620"
+          ],
+          "password": "x"
+        }
+      ],
+      "notes": "Its fee is 0% for free members until 30 November 2026: check its site after that."
+    }
+  ]
+}
