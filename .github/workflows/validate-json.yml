@@ -1,26 +1,48 @@
 name: JSON check
 
+# Every DebitMyData site reads these lists from here, so each change and each pull request is
+# checked before it can break them: a green tick on a pull request means it's safe to merge.
 on:
   push:
     paths:
       - "**.json"
+      - ".github/workflows/validate-json.yml"
   pull_request:
-    types: [opened, review_requested, synchronize]
+
+permissions:
+  contents: read
 
 jobs:
-  json_validator:
+  check:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - name: Check for duplicates
-        run : |
-          sh dupes.sh
-
-      - name: Check JSON syntax
+      - name: Both files are valid JSON
         run: |
-          if ! jq empty pools-v2.json; then
-            echo "JSON syntax check failed"
-            exit 1
-          fi
+          jq empty pools-v2.json
+          jq empty pools-info.json
+
+      - name: Each pool in pools-v2.json has an id, a name, a link, its tags and addresses
+        run: |
+          bad=$(jq -c '[.[] | select((.id | type) != "number" or (.name | type) != "string"
+                 or (.link | type) != "string" or (.tags | type) != "array"
+                 or (.addresses | type) != "array") | (.name // .id)]' pools-v2.json)
+          if [ "$bad" != "[]" ]; then echo "Incomplete pools: $bad"; exit 1; fi
+
+      - name: No two pools share an id or a name
+        run: |
+          ids=$(jq -c '[group_by(.id)[] | select(length > 1) | .[0].id]' pools-v2.json)
+          if [ "$ids" != "[]" ]; then echo "Ids used twice: $ids"; exit 1; fi
+          # the sites name each pool's page and logo by its name's lowercase letters and digits
+          names=$(jq -c '[.[].name | ascii_downcase | gsub("[^a-z0-9]"; "")] | [group_by(.)[] | select(length > 1) | .[0]]' pools-v2.json)
+          if [ "$names" != "[]" ]; then echo "Names that read the same: $names"; exit 1; fi
+
+      - name: Each entry in pools-info.json is for a pool in pools-v2.json, once
+        run: |
+          jq -e '.pools | type == "array"' pools-info.json > /dev/null || { echo 'pools-info.json must read {"pools": [...]}'; exit 1; }
+          unknown=$(jq -n -c --slurpfile v2 pools-v2.json --slurpfile info pools-info.json \
+            '($v2[0] | map(.id)) as $ids | [$info[0].pools[].id | select(. as $i | $ids | index($i) | not)]')
+          if [ "$unknown" != "[]" ]; then echo "Ids not in pools-v2.json: $unknown"; exit 1; fi
+          twice=$(jq -c '[.pools | group_by(.id)[] | select(length > 1) | .[0].id]' pools-info.json)
+          if [ "$twice" != "[]" ]; then echo "Ids used twice in pools-info.json: $twice"; exit 1; fi

@@ -14,6 +14,11 @@ The pools that mine DMD (the DebitMyData coin), for DebitMyData's sites:
 The pools' logos are in [mining-pool-logos](https://github.com/DebitMyData-PoW/mining-pool-logos),
 named as the pool's slug: its name's lowercase letters and digits (`Coin-Miners`: `coinminers.svg`).
 
+Every change and every pull request is checked automatically (the **JSON check** on GitHub):
+both files must be valid JSON, each pool needs its own `id` and name with its `link`, `tags` and
+`addresses`, and each entry in `pools-info.json` must be for a pool in `pools-v2.json`. A green
+tick on a pull request means it's safe to merge.
+
 ## DMD Mining: `pools-info.json`
 
 One entry per pool, by its `id` in `pools-v2.json`. Every field but `id` is optional: a pool
